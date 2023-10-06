@@ -18,4 +18,9 @@ class Owner extends Model
     public function apartments(){
         return $this->hasMany(Apartment::class);
     }
+
+    //Relazione one to many con modello Message -  Owners tab. principale
+    public function message(){
+        return $this->hasMany(Message::class);
+    }
 }
