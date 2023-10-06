@@ -13,4 +13,9 @@ class Owner extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    //Relazione one to many con modello Apartment -  Owners tab. principale
+    public function apartments(){
+        return $this->hasMany(Apartment::class);
+    }
 }
