@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //Relazione one to one con modello Owner -  Users tab.pricipale
+    public function owner(){
+        return $this->hasOne(Owner::class);
+    }
 }
