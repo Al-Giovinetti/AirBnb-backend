@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sponsors', function (Blueprint $table) {
-            $table->unsignedTinyInteger('id');
+            $table->unsignedTinyInteger('id')->primary();
             $table->string('name')->unique();
             $table->string('color')->unique();
             $table->unsignedTinyInteger('duration');

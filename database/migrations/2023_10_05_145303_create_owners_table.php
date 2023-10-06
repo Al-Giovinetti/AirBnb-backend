@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('owners', function (Blueprint $table) {
-            $table->unsignedMediumInteger('id');
-            $table->string('name')->index();
-            $table->string('surname')->index();
+            $table->unsignedMediumInteger('id')->primary();
+            $table->string('name');
+            $table->string('surname');
             $table->unsignedTinyInteger('age');
             $table->text('image')->nullable();
             $table->text('bio')->nullable();

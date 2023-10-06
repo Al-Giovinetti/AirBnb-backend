@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::table('apartments', function (Blueprint $table) {
             $table->unsignedMediumInteger('owner_id')->after('id');
-            $table->foreign('owner_id')->references('id')->on('owners')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->foreign('owner_id')->references('id')->on('owners');
         });
     }
 
@@ -24,6 +25,7 @@ return new class extends Migration
     {
         Schema::table('apartments', function (Blueprint $table) {
             $table->dropForeign('apartments_owner_id_foreign');
+
             $table->dropColumn('owner_id');
         });
     }
