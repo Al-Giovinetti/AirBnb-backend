@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('address')->unique();
             $table->unsignedTinyInteger('beds');
-            $table->float('nightly_rate',3,2);
+            $table->float('nightly_rate',8,2);
             $table->timestamps();
         });
     }
