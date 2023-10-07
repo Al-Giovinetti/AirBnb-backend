@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Apartment;
 use App\Models\Owner;
+use App\Models\Review;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,8 +18,14 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
-            Owner::class,
-            Apartment::class,
+            OwnerSeeder::class,
+            ApartmentSeeder::class,
+            MessageSeeder::class,
+            ReviewSeeder::class,
+            SponsorSeeder::class,
+            ServiceSeeder::class,
+            
+
         ]);
     }
 }
