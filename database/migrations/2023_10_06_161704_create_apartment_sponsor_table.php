@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('apartment_sponsor', function (Blueprint $table) {
             $table->unsignedBigInteger('apartment_id');
             $table->foreign('apartment_id')->references('id')->on('apartments')->onUpdate('cascade')->onDelete('cascade');
+
             $table->unsignedTinyInteger('sponsor_id');
             $table->foreign('sponsor_id')->references('id')->on('sponsors')->onUpdate('cascade')->onDelete('cascade');
+
+            $table->datetime('sponsor_start');
+            $table->datetime('sponsor_end');
 
             $table->primary(['apartment_id' , 'sponsor_id']);
 

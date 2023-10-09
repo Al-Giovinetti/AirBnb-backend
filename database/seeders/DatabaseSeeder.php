@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Apartment;
+use App\Models\ApartmentService;
+use App\Models\ApartmentSponsor;
 use App\Models\Owner;
 use App\Models\Review;
 use Illuminate\Database\Seeder;
@@ -24,8 +26,8 @@ class DatabaseSeeder extends Seeder
             ReviewSeeder::class,
             SponsorSeeder::class,
             ServiceSeeder::class,
-            
-
+            ApartmentSponsorSeeder::class,
+            ApartmentServiceSeeder::class,
         ]);
     }
 }
