@@ -15,7 +15,7 @@ return new class extends Migration
             $table->unsignedTinyInteger('id')->primary();
             $table->string('name')->unique();
             $table->string('color')->unique();
-            $table->unsignedTinyInteger('duration');
+            $table->unsignedTinyInteger('duration_gg');
             $table->timestamps();
         });
     }
