@@ -1,4 +1,4 @@
-<header class="my_header py-2">
+<header class="my_header py-2 d-md-none">
     <div class="container">
         <ul class="row text-md-center m-0">
             <li class="col-sm-12 col-md-3 list-group-item">

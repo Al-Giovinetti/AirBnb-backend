@@ -72,7 +72,7 @@
             </div>
         </nav>
 
-        <main>
+        <main class="pt-md-3">
             @yield('content')
         </main>
     </div>
