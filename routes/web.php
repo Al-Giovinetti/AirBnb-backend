@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\ApartmentController as AdminApartmentController;
+use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
+use App\Http\Controllers\Admin\MessageController as AdminMessageController;
+use App\Http\Controllers\Admin\StatisticController as AdminStatisticController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +26,8 @@ Auth::routes();
 
 Route::prefix('admin')->name('admin')->middleware('auth')->group(function(){
     Route::get('/dashboard',[AdminDashboardController::class,'showDashboard'])->name('dashboard');
+    Route::resource('profile',AdminProfileController::class);
+    Route::resource('apartments',AdminApartmentController::class);
+    Route::get('/statistics',[AdminStatisticController::class,'index'])->name('statistics');
+    Route::get('/messages',[AdminMessageController::class,'index'])->name('messages');
 });
