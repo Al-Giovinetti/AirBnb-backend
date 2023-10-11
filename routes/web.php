@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::prefix('admin')->name('admin')->middleware('auth')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
     Route::get('/dashboard',[AdminDashboardController::class,'showDashboard'])->name('dashboard');
     Route::resource('profile',AdminProfileController::class);
     Route::resource('apartments',AdminApartmentController::class);

@@ -6,30 +6,38 @@
 
 <div class="container container-md-fluid">
     <div class="row d-md-flex justify-content-md-evenly">
-        <div class="col-sm-12 col-md-5 profile-box dashboad-box mb-sm-3 mb-md-4 ">
-            <div class="content">
-                <h2>Il tuo profilo</h2>
-                <p>Visiona il tuo profilo, aggiungi o modifica le tue info.</p>
+        <a href="" class="col-sm-12 col-md-5">
+            <div class=" profile-box dashboad-box mb-sm-3 mb-md-4 ">
+                <div class="content">
+                    <h2>Il tuo profilo</h2>
+                    <p>Visiona il tuo profilo, aggiungi o modifica le tue info.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-5 houses-box dashboad-box mb-sm-3 mb-md-4">
-            <div class="content">
-                <h2>Le tue abitazioni</h2>
-                <p>Vedi le abitazioni da te registrate, aggiungi e modifica dettagli.</p>
-            </div> 
-        </div>
-        <div class="col-sm-12 col-md-5 statistics-box dashboad-box mb-sm-3 mb-md-4">
-            <div class="content">
-                <h2>Statistiche</h2>
-                <p>Analizza tramite grafici il tuo andamento sulla piattaforma.</p>
+        </a>
+        <a href="{{route('admin.apartments.index')}}" class="col-sm-12 col-md-5">
+            <div class=" houses-box dashboad-box mb-sm-3 mb-md-4">
+                <div class="content">
+                    <h2>Le tue abitazioni</h2>
+                    <p>Vedi le abitazioni da te registrate, aggiungi e modifica dettagli.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-5 mexs-box dashboad-box mb-sm-3 mb-md-4">
-            <div class="content">
-                <h2>Messaggi</h2>
-                <p>Visualizza tutti i messaggi in arrivo sulla mail da te inserita.</p>
+        </a>
+        <a href="{{route('admin.statistics')}}" class="col-sm-12 col-md-5">
+            <div class="statistics-box dashboad-box mb-sm-3 mb-md-4">
+                <div class="content">
+                    <h2>Statistiche</h2>
+                    <p>Analizza tramite grafici il tuo andamento sulla piattaforma.</p>
+                </div>
             </div>
-        </div>
+        </a>
+        <a href="{{route('admin.messages')}}" class="col-sm-12 col-md-5">
+            <div class=" mexs-box dashboad-box mb-sm-3 mb-md-4">
+                <div class="content">
+                    <h2>Messaggi</h2>
+                    <p>Visualizza tutti i messaggi in arrivo sulla mail da te inserita.</p>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
 @endsection
