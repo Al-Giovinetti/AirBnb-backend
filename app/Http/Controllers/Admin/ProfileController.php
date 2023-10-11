@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Owner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -34,9 +36,12 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $authId)
     {
-        return view('admin.profile.show');
+        $authId = Auth::id();
+        $owner = Owner::findOrFail($authId);
+
+        return view('admin.profile.show',compact('owner'));
     }
 
     /**

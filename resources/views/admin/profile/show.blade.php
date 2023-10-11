@@ -1,7 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>
-    Info profilo
-</h1>
+<div class="container">
+    <div class="card mb-3 mt-3 px-0">
+        <div class="card-header">
+            <h1>Il tuo profilo</h1>
+        </div>
+        <div class="card-body row">
+            <div class="col-12 col-md-4">
+                <img src="{{ $owner->image }}" class="img-fluid rounded-start" alt=" 'Your image profile' ">
+            </div>
+            <div class="col-12 col-md-8">
+                <h3>{{ $owner->name . " " . $owner->surname}}</h3>
+                <p>{{ $owner->age}} anni</p>
+                <h5>La tua presentazione</h5>
+                <p>{{ $owner->bio}}</p>
+            </div>
+        </div>
+        <div class="card-footer d-flex flex-column align-items-center flex-md-row justify-content-md-around">
+            <button type="button" class=" btn btn-primary mb-2 mb-md-0">Torna Indietro</button>
+            <button type="button" class=" btn btn-primary mb-2 mb-md-0">Modifica Info</button>
+            <form action="">
+                <button type="button" class=" btn btn-primary mb-2 mb-md-0">Cancella profilo</button>
+            </form>
+
+        </div>
+    </div>  
+</div>
 @endsection
