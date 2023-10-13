@@ -41,23 +41,27 @@ class ProfileController extends Controller
         $authId = Auth::id();
         $owner = Owner::findOrFail($authId);
 
-        return view('admin.profile.show',compact('owner'));
+        return view('admin.owners.show',compact('owner'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Owner $owner)
     {
-        //
+        return view('admin.owners.edit',compact('owner'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Owner $owner)
     {
-        //
+        $data = $request->all();
+        $owner->update($data);
+        return redirect()->route('admin.owners.show',$owner->id);
+
+
     }
 
     /**

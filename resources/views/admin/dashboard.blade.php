@@ -5,8 +5,8 @@
 @include('partials.navbar')
 
 <div class="container ">
-    <div class="row d-md-flex justify-content-md-evenly">
-        <a href="{{route('admin.profile.show', $authId)}}" class="col-12 col-md-5">
+    <div class="row d-md-flex justify-content-md-around">
+        <a href="{{route('admin.owners.show', $authId)}}" class="col-12 col-md-5">
             <div class=" profile-box dashboad-box mb-3 mb-md-4 ">
                 <div class="content">
                     <h2>Il tuo profilo</h2>

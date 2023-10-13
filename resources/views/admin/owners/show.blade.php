@@ -19,7 +19,9 @@
         </div>
         <div class="card-footer d-flex flex-column align-items-center flex-md-row justify-content-md-around">
             <button type="button" class=" btn btn-primary mb-2 mb-md-0">Torna Indietro</button>
-            <button type="button" class=" btn btn-primary mb-2 mb-md-0">Modifica Info</button>
+            <button type="button" class=" btn btn-primary mb-2 mb-md-0">
+                <a href="{{ route('admin.owners.edit', $owner) }}">Modifica Info</a>
+            </button>
             <form action="">
                 <button type="button" class=" btn btn-primary mb-2 mb-md-0">Cancella profilo</button>
             </form>

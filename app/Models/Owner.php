@@ -9,6 +9,14 @@ class Owner extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'surname',
+        'age',
+        'image',
+        'bio',
+    ];
+
     //Relazione one to one con modello User -  Owners tab. dipendente
     public function user(){
         return $this->belongsTo(User::class);
