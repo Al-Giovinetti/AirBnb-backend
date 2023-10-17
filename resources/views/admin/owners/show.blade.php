@@ -18,7 +18,9 @@
             </div>
         </div>
         <div class="card-footer d-flex flex-column align-items-center flex-md-row justify-content-md-around">
-            <button type="button" class=" btn btn-primary mb-2 mb-md-0">Torna Indietro</button>
+            <button type="button" class=" btn btn-primary mb-2 mb-md-0">
+                <a href="{{ route('admin.dashboard') }}">Torna Indietro</a>
+            </button>
             <button type="button" class=" btn btn-primary mb-2 mb-md-0">
                 <a href="{{ route('admin.owners.edit', $owner) }}">Modifica Info</a>
             </button>
@@ -29,4 +31,11 @@
         </div>
     </div>  
 </div>
+
+<style>
+    a{
+        color: white;
+        text-decoration: none;
+    }
+</style>
 @endsection

@@ -40,7 +40,6 @@
         </a>
     </div>
 </div>
-@endsection
 
 <style>
     .dashboad-box{
@@ -68,4 +67,11 @@
     .mexs-box{
         border: 1px solid pink;
     }
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
 </style>
+@endsection
+
