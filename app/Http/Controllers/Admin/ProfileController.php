@@ -57,7 +57,13 @@ class ProfileController extends Controller
      */
     public function update(Request $request, Owner $owner)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'name' => ['required','max:25'],
+            'surname' => ['required','max:30'],
+            'age' => ['max:2'],
+            'image' => ['nullable','max:200'],
+            'bio' => ['nullable','max:1000'],
+        ]);
         $owner->update($data);
         return redirect()->route('admin.owners.show',$owner->id);
 
