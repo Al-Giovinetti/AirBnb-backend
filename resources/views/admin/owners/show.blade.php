@@ -6,9 +6,9 @@
         <div class="card-header">
             <h1>Il tuo profilo</h1>
         </div>
-        <div class="card-body row">
-            <div class="col-12 col-md-4">
-                <img src="{{ $owner->image }}" class="img-fluid rounded-start" alt=" 'Your image profile' ">
+        <div class="card-body row align-items-center">
+            <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <img src="{{ $owner->image }}" class="img-fluid" alt=" 'Owner image profile's' ">
             </div>
             <div class="col-12 col-md-8">
                 <h3>{{ $owner->name . " " . $owner->surname}}</h3>
