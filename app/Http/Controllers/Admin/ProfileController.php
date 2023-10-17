@@ -22,14 +22,39 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.owners.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    { 
+        $userId = Auth::user()->id;
+
+        $data = $request->validate([
+            'name' => ['required','max:25'],
+            'surname' => ['required','max:30'],
+            'age' => ['max:2'],
+            'image' => ['nullable','max:200'],
+            'bio' => ['nullable','max:1000'],
+        ]);
+
+       $newOwner = new Owner();
+       $newOwner->id = $userId;
+       $newOwner->user_id = $userId;
+       $newOwner->name = $data['name'];
+       $newOwner->surname = $data['surname'];
+       $newOwner->age = $data['age'];
+       $newOwner->image = $data['image'];
+       $newOwner->bio = $data['bio'];
+       $newOwner->save();
+
+       return redirect()->route('admin.dashboard');
+
+
+
+
         
     }
 
