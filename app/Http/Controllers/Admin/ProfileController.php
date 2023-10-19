@@ -50,12 +50,7 @@ class ProfileController extends Controller
        $newOwner->bio = $data['bio'];
        $newOwner->save();
 
-       return redirect()->route('admin.dashboard');
-
-
-
-
-        
+       return redirect()->route('admin.dashboard');  
     }
 
     /**
@@ -98,8 +93,9 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Owner $owner)
     {
-        //
+        $owner->delete();
+        return view('auth.register');
     }
 }

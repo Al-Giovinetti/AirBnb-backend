@@ -24,8 +24,10 @@
             <button type="button" class=" btn btn-primary mb-2 mb-md-0">
                 <a href="{{ route('admin.owners.edit', $owner) }}">Modifica Info</a>
             </button>
-            <form action="">
-                <button type="button" class=" btn btn-primary mb-2 mb-md-0">Cancella profilo</button>
+            <form action="{{ route('admin.owners.destroy', $owner)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-primary">Cancella profilo</button>
             </form>
 
         </div>
