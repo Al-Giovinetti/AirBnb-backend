@@ -21,7 +21,7 @@ class Apartment extends Model
 
     //Relazione many to many con modello Sponsor 
     public function sponsors(){
-        return $this->belongsToMany(Sonsor::class);
+        return $this->belongsToMany(Sponsor::class);
     }
 
     //Relazione many to many con modello Service 
