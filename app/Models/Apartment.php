@@ -9,6 +9,18 @@ class Apartment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'owner_id',
+        'name',
+        'description',
+        'image',
+        'region',
+        'city',
+        'address',
+        'beds',
+        'nightly_rate'
+    ];
+
      //Relazione one to many con modello Owner -  Apartments tab. dipendente
      public function owner(){
         return $this->belongsTo(Owner::class);

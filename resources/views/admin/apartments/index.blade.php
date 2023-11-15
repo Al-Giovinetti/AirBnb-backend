@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-3">
-    <div class="row col-11 col-md-12 mx-auto justify-content-md-start">
+    <div class="row mx-2 justify-content-md-start">
         @foreach($apartments as $apartment)
         <div class="card col-md-4 mb-3 me-md-3">
             <img src="{{ $apartment->image}}" class="card-img-top" alt="{{ $apartment->name }} image">
@@ -16,6 +16,10 @@
             </div>
         </div>
         @endforeach
+    </div>
+    <div class="row">
+        <a href="{{ route('admin.apartments.create')}}" class="btn btn-primary mb-2 col-7 mx-auto">Aggiungi struttura</a>
+        <a href="" class="btn btn-primary mb-2 col-7 mx-auto">Strutture disabilitate</a>
     </div>
 </div>
 

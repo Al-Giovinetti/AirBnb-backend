@@ -14,7 +14,7 @@ class Owner extends Model
         'surname',
         'age',
         'image',
-        'bio',
+        'bio'
     ];
 
     //Relazione one to one con modello User -  Owners tab. dipendente

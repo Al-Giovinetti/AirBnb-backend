@@ -3,12 +3,12 @@
 @section('content')
     <div class="container mt-3">
         <div class="row mx-2">
-            <div class="card px-0">
+            <div class="card px-0 mb-3">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h3> {{ $apartment->name }} </h3>
                     <div class="sponsors">
                         @foreach($apartment->sponsors as $sponsor)
-                            <span style="background-color: {{ $sponsor->color }}" class="p-1">{{ $sponsor->name }}</span>
+                            <span style="background-color: {{$sponsor->color}}" class="p-1">{{ $sponsor->name }}</span>
                         @endforeach
                     </div>   
                 </div>

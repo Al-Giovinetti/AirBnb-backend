@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Apartment;
 use App\Models\ApartmentService;
 use App\Models\Service;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class ApartmentController extends Controller
 {
@@ -26,7 +29,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        $services= Service::all();
+        return view('admin.apartments.create',compact('services'));
     }
 
     /**
@@ -34,7 +38,33 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $regions = ['abruzzo','basilicata','calabria','campania','emilia Romagna','friuli venezia giulia','lazio','liguria','lombardia',
+                    'marche','molise','piemonte','puglia','sardegna','sicilia','toscana','trentino alto adige','umbria',"val d'aosta",'veneto'];
+        
+        $userId = Auth::user()->id;
+
+
+        $data = $request->validate([
+            'name' => ['required','max:40'],
+            'description' => ['required','max:600'],
+            'image' => ['required','max:500'],
+            'region' => ['required',Rule::in($regions)],
+            'city' => ['required','max:20'],
+            'address' => ['required','max:50'],
+            'beds' => ['required','numeric','max:25'],
+            'nightly_rate' => ['required','max:3'],
+            'services'=>['exists:services,id']
+        ]);
+
+        $data['owner_id']=$userId;
+
+        $newApartment = Apartment::create($data);
+
+        if($request->has('services')){
+            $newApartment->services()->sync($request->services);
+        }
+
+        return redirect()->route('admin.apartments.index');  
     }
 
     /**
