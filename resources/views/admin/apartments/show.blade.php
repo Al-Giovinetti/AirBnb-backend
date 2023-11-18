@@ -13,7 +13,7 @@
                     </div>   
                 </div>
                 <div class="image-box mb-2 mx-auto">
-                    <img src="{{ $apartment->image }}" alt="{{ $apartment->name }} image">
+                    <img src="{{ $apartment->image }}" alt="{{ $apartment->name }} image" class="img-fluid rounded">
                 </div>
                 <div class="card-body d-md-flex">
                     <div class="col-12 col-md-9">
@@ -47,9 +47,7 @@
 
     <style>
         .image-box{
-            border:1px solid  black;
             border-radius: 10px;
-            padding: 0.5rem;
             margin: 10px;
             width: 85%;
             height: 300px;

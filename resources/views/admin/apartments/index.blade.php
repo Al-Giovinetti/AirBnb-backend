@@ -4,7 +4,7 @@
 <div class="container mt-3">
     <div class="row mx-2 justify-content-md-start">
         @foreach($apartments as $apartment)
-        <div class="card col-md-4 mb-3 me-md-3">
+        <div class="card col-md-4 mb-3 me-md-3 pt-2" >
             <img src="{{ $apartment->image}}" class="card-img-top" alt="{{ $apartment->name }} image">
             <div class="card-body ">
                 <h5 class="card-title">{{ $apartment->name }}</h5>
