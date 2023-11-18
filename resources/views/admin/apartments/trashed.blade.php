@@ -23,7 +23,7 @@
                         <td>{{ $apartment->city}}</td>
                         <td>{{ $apartment->address}}</td>
                         <td>
-                            <a href="" class="btn btn-success">Rendi disponibile</a>
+                            <a href="{{route('admin.apartments.restored',$apartment->id)}}" class="btn btn-success">Rendi disponibile</a>
                             <form action="" class="d-inline">
                                 <input type="submit" class="btn btn-danger" value="Cancella Definitivamente">
                             </form>

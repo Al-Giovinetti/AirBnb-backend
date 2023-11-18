@@ -109,4 +109,13 @@ class ApartmentController extends Controller
         $apartmentList = Apartment::onlyTrashed()->paginate(10);
         return view('admin.apartments.trashed', compact('apartmentList'));
     }
+
+    /**
+     * Resore an istance of model Apartment
+     */
+    public function restore(string $id){
+        $apartment=Apartment::withTrashed()->findOrFail($id);
+        $apartment->restore();
+        return redirect()->route('admin.apartments.index');
+    }
 }
