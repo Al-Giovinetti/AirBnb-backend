@@ -35,7 +35,9 @@
                 </div>
                 <div class="card-footer d-flex justify-content-around">
                     <a href="" class="btn btn-primary">Modifica Dati</a>
-                    <form action="">
+                    <form action="{{ route('admin.apartments.destroy',$apartment)}}" method="POST">
+                        @method('DELETE')
+                        @csrf
                         <button type="submit" class="btn btn-primary">Disabilita struttura</button>  
                     </form>
                 </div>
