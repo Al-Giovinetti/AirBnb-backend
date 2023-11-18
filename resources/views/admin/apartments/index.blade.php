@@ -19,7 +19,7 @@
     </div>
     <div class="row">
         <a href="{{ route('admin.apartments.create')}}" class="btn btn-primary mb-2 col-7 mx-auto">Aggiungi struttura</a>
-        <a href="" class="btn btn-primary mb-2 col-7 mx-auto">Strutture disabilitate</a>
+        <a href="{{ route('admin.apartments.trashed')}}" class="btn btn-primary mb-2 col-7 mx-auto">Strutture disabilitate</a>
     </div>
 </div>
 

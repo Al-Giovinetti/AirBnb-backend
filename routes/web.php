@@ -27,6 +27,7 @@ Auth::routes();
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
     Route::get('/dashboard',[AdminDashboardController::class,'showDashboard'])->name('dashboard');
     Route::resource('owners',AdminProfileController::class);
+    Route::get('/apartments/trashed',[AdminApartmentController::class,'trashed'])->name('apartments.trashed');
     Route::resource('apartments',AdminApartmentController::class);
     Route::get('/statistics',[AdminStatisticController::class,'index'])->name('statistics');
     Route::get('/messages',[AdminMessageController::class,'index'])->name('messages');

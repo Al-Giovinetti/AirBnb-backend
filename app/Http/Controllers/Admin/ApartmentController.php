@@ -101,4 +101,12 @@ class ApartmentController extends Controller
         $apartment->delete();
         return redirect()->route('admin.apartments.index');
     }
+    /**
+     * Shows all items in the trash
+     */
+    public function trashed()
+    {
+        $apartmentList = Apartment::onlyTrashed()->paginate(10);
+        return view('admin.apartments.trashed', compact('apartmentList'));
+    }
 }
