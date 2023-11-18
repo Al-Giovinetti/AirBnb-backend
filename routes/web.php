@@ -29,6 +29,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
     Route::resource('owners',AdminProfileController::class);
     Route::get('/apartments/trashed',[AdminApartmentController::class,'trashed'])->name('apartments.trashed');
     Route::get('/apartments/deleted/{id}/restore',[AdminApartmentController::class,'restore'])->name('apartments.restored');
+    Route::delete('/apartments/forceDelete/{id}/forceDelete',[AdminApartmentController::class,'forceDelete'])->name('apartments.forceDelete');
     Route::resource('apartments',AdminApartmentController::class);
     Route::get('/statistics',[AdminStatisticController::class,'index'])->name('statistics');
     Route::get('/messages',[AdminMessageController::class,'index'])->name('messages');

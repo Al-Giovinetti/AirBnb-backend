@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
+            @if(count($apartmentList)>0)
             <table class="table table-striped ">
                 <thead>
                     <tr class="text-center">
@@ -24,12 +25,19 @@
                         <td>{{ $apartment->address}}</td>
                         <td>
                             <a href="{{route('admin.apartments.restored',$apartment->id)}}" class="btn btn-success">Rendi disponibile</a>
-                            <form action="" class="d-inline">
+                            <form action="{{route('admin.apartments.forceDelete',$apartment->id)}}"  method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
                                 <input type="submit" class="btn btn-danger" value="Cancella Definitivamente">
                             </form>
                         </td>
                     </tr>
                     @endforeach
+                </tbody>
+            </table>
+            @else
+            <h2>Non hai strutture disattivate</h2>
+            @endif
 
 
         </div>
