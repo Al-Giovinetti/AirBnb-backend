@@ -28,15 +28,15 @@ class MessageSeeder extends Seeder
 
         $ownersId = Owner::all()->pluck('id')->toArray();
 
-        foreach($messages as $key => $message){
-            $ownerRandomKey = array_rand($ownersId);
-
-            $newMessage = new Message();
-            $newMessage->id = $key+1;
-            $newMessage->owner_id = $ownersId[$ownerRandomKey];
-            $newMessage->sender_email = $faker->email();
-            $newMessage->content = $message;
-            $newMessage->save();
-        };
+        foreach($ownersId as $owner){
+            $randomMessages = rand(1, count($messages));
+            for($i=0; $i<$randomMessages; $i++){
+                $newMessage = new Message();
+                $newMessage->owner_id= $owner;
+                $newMessage->sender_email = $faker->name();
+                $newMessage->content = $messages[$i];
+                $newMessage->save();
+            }
+        }
     }
 }
