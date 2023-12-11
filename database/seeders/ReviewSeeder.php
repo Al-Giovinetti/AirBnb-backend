@@ -29,18 +29,16 @@ class ReviewSeeder extends Seeder
 
         $apartmentsId = Apartment::all()->pluck('id')->toArray();
 
-        foreach($reviews as $key => $review){
-            $newReview = new Review();
-            $apartmentRandomKey = array_rand($apartmentsId);
-
-            $newReview->id = $key+1;
-            $newReview->apartment_id = $apartmentsId[$apartmentRandomKey];
-            $newReview->sender = $faker->userName();
-            $newReview->content = $review;
-            $newReview->vote = $faker->numberBetween(1, 5);
-            $newReview->save();
+        foreach($apartmentsId as $apartmentId){
+            $randomReview = rand(1,count($reviews));
+            for($i=0; $i<$randomReview; $i++){
+                $newReview = new Review();
+                $newReview->apartment_id = $apartmentId;
+                $newReview->sender = $faker->name();
+                $newReview->content = $reviews[$i];
+                $newReview->vote = $faker->numberBetween(1,5);
+                $newReview->save();
+            }
         }
-
-
     }
 }
