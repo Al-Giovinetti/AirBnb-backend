@@ -2,6 +2,10 @@
 
 @section('content')
 <h1>
-    Statistiche lista
+Area Statistiche e grafici  
 </h1>
 @endsection
+
+<script>
+    console.log('sono qui amami');
+</script>

@@ -31,7 +31,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
     Route::get('/apartments/deleted/{id}/restore',[AdminApartmentController::class,'restore'])->name('apartments.restored');
     Route::delete('/apartments/forceDelete/{id}/forceDelete',[AdminApartmentController::class,'forceDelete'])->name('apartments.forceDelete');
     Route::resource('apartments',AdminApartmentController::class);
-    Route::get('/statistics',[AdminStatisticController::class,'index'])->name('statistics');
+    Route::get('/statistics',[AdminStatisticController::class,'dataForGraph'])->name('statistics');
     Route::get('/messages',[AdminMessageController::class,'index'])->name('messages');
     Route::get('/reviews/{id}',[AdminReviewController::class,'reviewForHome'])->name('reviews');
 });
