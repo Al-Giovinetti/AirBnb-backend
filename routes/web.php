@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\ApartmentController as AdminApartmentController;
 use App\Http\Controllers\Admin\ProfileController as AdminProfileController;
 use App\Http\Controllers\Admin\MessageController as AdminMessageController;
 use App\Http\Controllers\Admin\StatisticController as AdminStatisticController;
-
+use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,4 +33,5 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
     Route::resource('apartments',AdminApartmentController::class);
     Route::get('/statistics',[AdminStatisticController::class,'index'])->name('statistics');
     Route::get('/messages',[AdminMessageController::class,'index'])->name('messages');
+    Route::get('/reviews/{id}',[AdminReviewController::class,'reviewForHome'])->name('reviews');
 });

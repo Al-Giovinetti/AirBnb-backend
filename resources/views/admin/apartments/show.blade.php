@@ -34,6 +34,7 @@
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-around">
+                    <a href="{{ route('admin.reviews',$apartment->id)}}" class="btn btn-primary">Mostra Recensioni casa</a>
                     <a href="{{ route('admin.apartments.edit',$apartment)}}" class="btn btn-primary">Modifica Dati</a>
                     <a href="{{ route('admin.apartments.index')}}" class="btn btn-secondary">Torna indietro</a>
                     <form action="{{ route('admin.apartments.destroy',$apartment)}}" method="POST">
